@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="WP" content="page 1">
+
+	<style>
+		body
+		{
+			background-image: url("wp_background.jpg");
+			background-repeat:no-repeat;
+			background-size: cover;
+			background-attachment: fixed;
+		}
+
+		.header-img
+		{
+			display: inline-block;
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+
+		.xyz
+		{
+			width: 70%;
+			display: inline-block;
+			height: 40%;
+			background-size: contain;
+			background-repeat: no-repeat;
+			float: right;
+			font-size: 30px; 
+			color: #f97c0f;
+			font-family: cursive;
+		}
+
+		form
+		{
+			text-transform: uppercase;
+			background-color: rgb(0,255,255,0.4);
+			padding: 20px;
+			text-align: center;
+			margin: 100px 0px 0px;
+			border-radius: 25px;
+			color: #f97c0f;
+			animation-name: example2;
+			animation-duration: 5s;
+			animation-iteration-count: infinite;
+			animation-timing-function: ease-in-out;
+		}
+
+		@keyframes example2
+		{
+			0%{background-color: rgb(0,255,255,0.4);}
+			25%{background-color: rgb(0,64,255,0.4);}
+			50%{background-color: rgb(0,0,255,0.4);}
+			100%{background-color: rgb(0,128,255,0.4);}
+		}
+
+		input[type=text]
+		{
+			margin: auto;
+			width: 50%;
+			padding: 12px 20px;
+			text-align: center;
+			font-size: 25px;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+
+		input[type=submit]
+		{
+			background-color: darkblue;
+			color: white;
+			padding: 14px 50px;
+			margin: 8px 0;
+			border: none;
+			border-radius: 12px;
+			cursor: pointer;
+			font-size: 25px;
+
+		}
+
+		#img1
+		{
+			border-radius: 25px;
+			position: relative;
+			animation-name: example1;
+			animation-duration: 1.5s;
+			animation-direction: normal;
+		}
+
+		@keyframes example1
+		{
+			0%{left:-50px; top:0px;}
+			50%{left:200px; top:0px;}
+			100%{left:0px; top:0px;}
+		}
+	</style>
+
+</head>
+
+<body>
+	<header>
+    	<div class="header-img">
+    		<img src="restaurant_logo.jpeg" id="img1" width="200" height="180">
+    		
+    	</div>
+    	<div class="xyz">
+    		<h1>Contactless Food Ordering</h1>	
+    	</div>
+
+	</header>
+	
+	<form action="http://localhost/info.php" method="post">
+		<div id="cod">
+
+		<label for="Rcode" id="cod" style="font-weight: bold; font-size: 50px;">Enter code</label><br>  
+    	<input type="text" id="Rcode" name="code"><br>   
+    	<input type="submit" id="cod" value="Submit">  
+		</div>
+	</form>
+
+</body>
+</html>

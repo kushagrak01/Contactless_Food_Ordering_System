@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="WP" content="page 31">
+	<title>Login</title>
+	<style>
+		.bbb
+		{
+			margin: 35px 550px;
+		}
+
+		div
+		{
+			padding: 12px;
+			box-sizing: border-box;
+		}
+
+		.header11
+		{
+			background-image: linear-gradient(darkblue, aqua);
+			color: #f1f1f1;
+			position: fixed;
+			top: 0;
+			width: 100%;
+			left: 0;
+		}
+
+		.xyz
+		{
+			width: 60%;
+			display: inline-block;
+			background-size: contain;
+			background-repeat: no-repeat;
+			float: left;
+			top: 0;
+			font-size: 30px; 
+			color: #f97c0f;
+			font-family: cursive;
+			height: 150px;
+		}
+
+		#usr
+		{
+			border: 1px solid #ccc;;
+			border-radius: 4px;
+			width: 420px;
+			font-size: 30px;
+			background-color: #93b6ce;
+			text-align: center;
+			margin-top: 250px;
+			padding: 30px;
+			box-sizing: border-box;
+			height: 220px;
+		}
+
+		button[type=submit]
+		{
+			background-color: darkblue;
+	  		color: white;
+	  		padding: 10px 35px;
+	  		text-align: center;
+	  		font-size:20px;
+  			margin-top: 20px;
+  			border-radius: 12px;
+  			border: none;
+  			cursor: pointer;
+		}
+
+		.buttons
+		{
+			border: none;
+			border-radius: 12px;
+ 			font-size: 25px;
+ 			background-color: darkblue;
+ 			cursor: pointer;
+ 			color: white;
+ 			padding: 15px 20px;
+		}
+
+		.buttons1
+		{
+			border: none;
+			border-radius: 12px;
+  			font-size: 25px; 			
+			margin-left: 10px;
+			background-color: darkblue;
+			cursor: pointer;
+			color: white;
+			padding: 15px 20px;
+ 			margin-top: 20px;
+
+		}
+
+		.t2
+		{
+			height: 23px;
+			font-size: 23px;
+			width: 50%;
+		}
+
+		h1
+		{
+			margin-left: 40px;
+		}
+
+		body
+		{
+			background-image: url("wp_background.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-attachment: fixed;
+		}
+
+		#img1
+		{
+			border-radius: 25px;
+			position: relative;
+			animation-name: example1;
+			animation-duration: 1.5s;
+			animation-direction: normal;
+		}
+
+		@keyframes example1
+		{
+			0%{left:-50px; top:0px;}
+			50%{left:200px; top:0px;}
+			100%{left:0px; top:0px;}
+		}
+
+	</style>
+</head>
+
+<body>
+	<header style="display: inline-block;" class="header11">
+	    <img src="restaurant_logo.jpeg" id="img1" ﻿width="200" height="150" style="float: left;" >
+
+    	<div class="xyz">
+    		<h1>Contactless Food Ordering</h1>	
+    	</div>
+
+	</header>
+
+	<div class="bbb">
+		<div id="usr">
+			<form>
+
+				<label for="usrname">Username:</label>
+				<input type="text" id="usrname" name="usrname" class="t2" required><br><br>
+
+				<label for="psswrd">Password:</label>
+				<input type="password" id="psswrd" name="psswrd" class="t2" required><br>
+
+				<button type="Submit"  onclick="func()"> Submit </button>
+			</form>
+		</div>
+	</div>
+
+	<script>
+
+	    function porders()
+		{
+			window.open("http://localhost/rest1.php");
+		}
+
+		function generateb()
+		{
+			window.open("http://localhost/tableno.php");
+	    }
+
+		function func()
+		{
+			var name=document.getElementById("usrname").value;
+			var password=document.getElementById("psswrd").value;
+
+			if(name!="abcd" || password!="1234")
+			{
+				alert("Invalid Username or Password!");
+				return false;
+			}
+			else
+			{
+				var ele=document.getElementById("usr");
+				ele.innerHTML = "";
+
+				var t1= document.createElement("button");
+				t1.setAttribute("class","buttons");
+	            t1.innerHTML = "Pending Orders";
+	            t1.onclick = function() {porders()};
+
+	            var t2= document.createElement("button");
+				t2.setAttribute("class","buttons1");
+	            t2.innerHTML = "Generate Bill";
+	            t2.onclick = function() {generateb()};
+
+	            ele.appendChild(t1);
+	  			ele.appendChild(t2);
+			}
+		}
+	</script>
+
+</body>
+</html>
