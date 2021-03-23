@@ -11,6 +11,6 @@ Enter table no as 1,2 or 3 in customer side.
 
 For restaurant side:
 
-username- abcd
+Username: abcd
 
-password- 1234
+Password: 1234
